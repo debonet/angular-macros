@@ -7,7 +7,7 @@ An AngularJS module that allows for on-the-fly macro definition and use within H
 
 ## Example Usage
 
-~~~js
+~~~html
 
 <macro name="'example'">
 	<h1>this is a simple example of a macro</h1>
