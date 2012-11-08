@@ -9,7 +9,7 @@
 //
 // 
 (function(){
-	var modMacro = angular.module('modMacro', []);
+	var modMacro = angular.module('elementMacro', []);
 
 	var adirectiveForMacro = {};
 	var bLoaded = false;
@@ -39,14 +39,14 @@
 					}
 					bLoaded = true;
 
-					for (sMacro in adirectiveForMacro){
+					for (var sMacro in adirectiveForMacro){
 						if (adirectiveForMacro.hasOwnProperty(sMacro)){
 							modMacro.directive(sMacro,adirectiveForMacro[sMacro]);
 						}
-					};
-					angular.bootstrap(jq.parent(),['modMacro']);
+					}
+					angular.bootstrap(jq.parent(),['elementMacro']);
 				}
-			}
+			};
 		}
 	);
 
@@ -95,22 +95,22 @@
 							}],
 							"link"       : function(scope, jq, attrs, ctrl){
 								if (scope.$eval(attrs["evaluate"])===true){
-									for (sKey in attrs){
+									for (var sKey in attrs){
 										if (attrs.hasOwnProperty(sKey)){
 											scope.$watch(attrs[sKey],function(sValEval){
 												scope[sKey] = sValEval;
 											});
-										};
-									}
-								}
-								else{
-									for (sKey in attrs){
-										if (attrs.hasOwnProperty(sKey)){
-											scope[sKey] = attrs[sKey];
 										}
 									}
 								}
-							},
+								else{
+									for (var sKey2 in attrs){
+										if (attrs.hasOwnProperty(sKey2)){
+											scope[sKey2] = attrs[sKey2];
+										}
+									}
+								}
+							}
 						};
 					};
 				}

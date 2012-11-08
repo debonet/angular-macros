@@ -2,10 +2,10 @@
 	<head>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
-		<script src="src/modMacro.js"></script>
+		<script src="src/elementMacro.js"></script>
 	</head>
 
-	<body ng-app="modMacro">
+	<body ng-app="elementMacro">
 
 		<usemacros />
 
@@ -14,11 +14,10 @@
 			<ul>
 				<li>substitutions: {{variable1}}, {{variable2}}</li>
 				<li>and inner content: {{content}}</li>
-		<li>and content subselection: {{content|find:b}}</li>
+				<li>and content subselection: {{content|find:b}}</li>
 			</ul>
 		</macro>
 		
-
 		<example variable1="foo" variable2="bar">
 			THIS IS {{dynamic}} CONTENT <B>BOLD {{dynamic}} STUFF</B> 
 		</example>

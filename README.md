@@ -5,10 +5,10 @@ An AngularJS module that allows for on-the-fly macro definition and use within H
 
 ## How to use
 
-Just include modMacros in your main application, e.g.:
+Just include elementMacros in your main application, e.g.:
 
 ~~~js
-angular.module('myApp',['modMacros', ...]);
+angular.module('myApp',['elementMacros', ...]);
 ~~~
 
 
