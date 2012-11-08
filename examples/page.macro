@@ -1,0 +1,15 @@
+<define macro="'page'">
+	<html>
+		<head>
+			<title>{{title}}</title>
+		</head>
+		<body>
+			<h1>Standard page header</h1>
+			<h2>{{title}}</h1>
+			<div class='content'>
+				{{content}}
+			</div>
+			<div class='copyright'>Copyright (c) 2012 {{author}}</div>
+		</body>
+	</html>
+</define>

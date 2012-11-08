@@ -2,25 +2,24 @@
 	<head>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
-		<script src="src/elementMacro.js"></script>
+		<script src="../src/modMacro.js"></script>
 	</head>
 
-	<body ng-app="elementMacro">
+	<body ng-app="modMacro">
 
-		<usemacros />
 
-		<macro name="'example'">
+		<define macro="'example'">
 			<h1>this is a simple example of a macro</h1>
 			<ul>
 				<li>substitutions: {{variable1}}, {{variable2}}</li>
 				<li>and inner content: {{content}}</li>
 				<li>and content subselection: {{content|find:b}}</li>
 			</ul>
-		</macro>
+		</define>
 		
-		<example variable1="foo" variable2="bar">
+		<invoke macro="'example'" variable1="foo" variable2="bar">
 			THIS IS {{dynamic}} CONTENT <B>BOLD {{dynamic}} STUFF</B> 
-		</example>
+		</invoke>
 		
 		<input ng-model='dynamic' >
 		

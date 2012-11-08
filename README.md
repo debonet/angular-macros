@@ -5,17 +5,17 @@ An AngularJS module that allows for on-the-fly macro definition and use within H
 
 ## How to use
 
-Just include elementMacros in your main application, e.g.:
+Just include modMacros in your main application, e.g.:
 
 ~~~js
-angular.module('myApp',['elementMacros', ...]);
+angular.module('myApp',['modMacros', ...]);
 ~~~
 
 
 ## Macro Definition
 
 ~~~html
-<macro name="'example'">
+<define macro="'example'">
 	this is a simple example of a macro
 	
 		substitutions: {{variable1}}, {{variable2}}
@@ -24,16 +24,16 @@ angular.module('myApp',['elementMacros', ...]);
 		
 		and content subselection: {{content|find:b}}
 
-</macro>
+</define>
 ~~~
 
 
 ## Macro Invocation
 
 ~~~html
-<example variable1="foo" variable2="bar">
+<invoke macro="'example'" variable1="foo" variable2="bar">
 	THIS IS {{dynamic}} AND <B>BOLD STUFF</B> 
-</example>
+</invoke>
 ~~~
 
 
@@ -42,7 +42,7 @@ angular.module('myApp',['elementMacros', ...]);
 page.macro:
 
 ~~~html
-<macro name="page">
+<define macro="'page'">
 	<html>
 		<head>
 			<title>{{title}}</title>
@@ -56,15 +56,18 @@ page.macro:
 			<div class='copyright'>Copyright (c) 2012 {{author}}</div>
 		</body>
 	</html>
-</macro>
-<usemacros />
+</define>
+~~~
 
 
+then in index.html:
+
+~~~html
 <ng-include src="'page.macro'" />
 
-<page title="some page" author="me">
+<invoke macro="'page'" title="some page" author="me">
   This is some little page. 
-</page>
-
+</invoke>
 ~~~
+
 
